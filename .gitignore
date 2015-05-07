@@ -1,0 +1,22 @@
+# Java #
+*.class
+*.jar
+*.war
+out
+
+# Mac #
+.DS_Store
+
+# Intellij #
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Gradle #
+.gradle
+build
+
+# Npm build node_modules #
+api/node_modules
+client/node_modules
