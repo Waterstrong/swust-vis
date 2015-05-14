@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+repositories {
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+    testCompile("org.assertj:assertj-core:$assertJVersion")
+}

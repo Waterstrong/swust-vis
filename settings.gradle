@@ -18,4 +18,8 @@ include 'services:webservice'
 
 rootProject.name = 'swust-vis'
 
-include 'bugatti'
+include 'bugatti', 'veyron'
+
+project(':bugatti').name = 'back-end'
+
+project(':veyron').name = 'front-end'

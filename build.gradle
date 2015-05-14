@@ -2,18 +2,19 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
+        mavenLocal()
+        mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootGradlePluginVersion")
     }
 }
 
+group = 'cn.edu.swust'
+version =  'v1.0.0'
+
 allprojects {
     apply plugin: 'idea'
-    apply plugin: 'java'
-    apply plugin: 'spring-boot'
 }
 
 idea {
@@ -23,21 +24,9 @@ idea {
     }
 }
 
-jar {
-    baseName = 'swust-vis'
-    version =  '1.0.0-SNAPSHOT'
-}
 
 defaultTasks 'clean', 'build'
 
-repositories {
-    jcenter()
-    maven { url "http://repo.spring.io/snapshot" }
-    maven { url "http://repo.spring.io/milestone" }
-}
-
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
-    testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
-    testCompile("org.assertj:assertj-core:$assertJVersion")
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
 }
