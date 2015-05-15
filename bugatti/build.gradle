@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'spring-boot'
+apply plugin: 'cobertura'
 
 repositories {
     jcenter()
@@ -11,4 +12,19 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
     testCompile("org.assertj:assertj-core:$assertJVersion")
+}
+
+cobertura {
+    coverageFormats = ['html']
+    coverageEncoding = 'UTF-8'
+    coverageExcludes = ['.*ApplicationRunner.*']
+    coverageIgnoreMethodAnnotations = []
+    coverageCheckBranchRate = 80
+    coverageCheckLineRate = 80
+    coverageCheckPackageBranchRate = 80
+    coverageCheckPackageLineRate = 80
+    coverageCheckTotalBranchRate = 80
+    coverageCheckTotalLineRate = 80
+    coverageIgnoreTrivial = true
+    coverageCheckHaltOnFailure = true
 }
